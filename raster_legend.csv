@@ -1,0 +1,26 @@
+﻿value,name,r,g,b
+1,Temperate or sub-polar needleleaf forest,0,61,0
+2,Sub-polar taiga needleleaf forest,148,156,112
+3,Tropical or sub-tropical broadleaf evergreen forest,0,99,0
+4,Tropical or sub-tropical broadleaf deciduous forest,30,171,5
+5,Temperate or sub-polar broadleaf deciduous forest,20,140,61
+6,Mixed Forest,92,117,43
+7,Tropical or sub-tropical shrubland,179,158,43
+8,Temperate or sub-polar shrubland,179,138,51
+9,Tropical or sub-tropical grassland,232,220,94
+10,Temperate or sub-polar grassland,225,207,138
+11,Sub-polar or polar shrubland-lichen-moss,156,117,84
+12,Sub-polar or polar grassland-lichen-moss,186,212,143
+13,Sub-polar or polar barren-lichen-moss,64,138,112
+14,Wetland,107,163,138
+15,Cropland,230,174,102
+16,Barren lands,168,171,174
+17,Urban,220,33,38
+18,Water,76,112,163
+19,Snow and Ice,255,250,255
+20,Bog,88,124,107
+21,Fen,124,150,102
+22,Peatland,102,102,77
+23,Swamp,65,105,90
+24,Marsh,150,180,120
+25,Open-shallow waters,150,180,210
