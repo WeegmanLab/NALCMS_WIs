@@ -1,8 +1,8 @@
 #***********************************************************************************************************
 #  
-# Project: Wetlands Layers
-# Description: Rasterize WIs 
-# Date: 29 May 2025
+# Project: Land cover + Wetlands
+# Description: Rasterize CAN WI 
+# Date: 3 July 2025
 # Author: Érika Garcez da Rocha
 #
 #**********************************************************************************************************************************
@@ -35,17 +35,13 @@ tic("Read CNWI")
 can_sf <- terra::vect("./output/can_wetlands_merged.gpkg") 
 toc()
 # Rasterize vector of WIs #####
-tic("Rasterize Can")
-can_raster <- terra::rasterize(can_vect, r, field="CNWI_CLASS", touches=TRUE)
+tic("Rasterize and Save")
+can_raster <- terra::rasterize(can_vect, r, field = "CNWI_CLASS", touches=TRUE,
+                              filename = "./output/can_wetlands_raster.tif",
+                              overwrite = TRUE, gdal = c("COMPRESS=LZW"))
 rm(can_vect)
 toc()
 gc()
-# Save raster ####
-tic("Save final rasters")
-terra::writeRaster(can_raster, "./output/can_wetlands_raster.tif", overwrite=TRUE,
-                   gdal = c("COMPRESS=LZW"))
-toc()
-
 # Log ####
 # Save tic log output
 writeLines(as.character(tic.log(format = TRUE)), con = log_con)

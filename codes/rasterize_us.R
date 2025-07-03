@@ -1,8 +1,8 @@
 #***********************************************************************************************************
 #  
-# Project: Wetlands Layers
-# Description: Rasterize WIs 
-# Date: 29 May 2025
+# Project: Land cover + Wetlands
+# Description: Rasterize US WI
+# Date: 3 July 2025
 # Author: Érika Garcez da Rocha
 #
 #**********************************************************************************************************************************
@@ -52,18 +52,13 @@ lookup_table <- us_attrib |>
 print(lookup_table)
 toc()
 # Rasterize vector of WIs #####
-tic("Rasterize Can")
+tic("Rasterize and Save")
 us_raster <- terra::rasterize(us_vect, r, field = "ATT_num", touches=TRUE,
-                              filename = "./output/tmp_us_raster.tif",
+                              filename = "./output/us_wetlands_raster.tif",
                               overwrite = TRUE, gdal = c("COMPRESS=LZW"))
 rm(us_vect,r)
 toc()
 gc()
-# Save raster ####
-tic("Save final raster")
-terra::writeRaster(us_raster, "./output/us_wetlands_raster.tif", overwrite=TRUE,
-                   gdal = c("COMPRESS=LZW"))
-toc()
 # Log ####
 # Save tic log output
 writeLines(as.character(tic.log(format = TRUE)), con = log_con)

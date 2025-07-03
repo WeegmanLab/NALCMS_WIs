@@ -1,8 +1,8 @@
 #***********************************************************************************************************
 #  
-# Project: Wetlands Layers
-# Description: Merge Wetland Inventory Reclassified Layers and rasterize 
-# Date: 29 May 2025
+# Project: Land cover + Wetlands
+# Description: Merge Wetland Inventory Reclassified Layers 
+# Date: 3 July 2025
 # Author: Érika Garcez da Rocha
 #
 #**********************************************************************************************************************************

@@ -1,8 +1,8 @@
 #***********************************************************************************************************
 #  
-# Project: Wetlands Layers
+# Project: Land cover + Wetlands
 # Description: Rasterize WIs 
-# Date: 29 May 2025
+# Date: 03 July 2025
 # Author: Érika Garcez da Rocha
 #
 #**********************************************************************************************************************************
@@ -37,9 +37,9 @@ wi_vect <- terra::vect("./output/WIs_merged.gpkg")
 toc()
 gc()
 # Rasterize vector of WIs #####
-tic("Rasterize WIs")
+tic("Rasterize and Save WIs")
 wi_raster <- terra::rasterize(wi_vect, r, field = "reclass", touches = TRUE,
-                              filename = "./output/tmp_wetlands_raster.tif",
+                              filename = "./output/wetlands_raster.tif",
                               overwrite = TRUE, gdal = c("COMPRESS=LZW"))
 crs_w <- terra::crs(wi_raster)
 rm(wi_vect)
@@ -47,12 +47,6 @@ toc()
 gc()
 # Compare CRS of WIs raster and NALCMS raster ####
 message("All CRS for rasters are identical:\n",identical(crs_r,crs_w))
-# Save raster ####
-tic("Save final raster")
-terra::writeRaster(wi_raster, "./output/wetlands_raster.tif", 
-                   overwrite=TRUE, gdal = c("COMPRESS=LZW"))
-toc()
-
 # Log ####
 # Save tic log output
 writeLines(as.character(tic.log(format = TRUE)), con = log_con)

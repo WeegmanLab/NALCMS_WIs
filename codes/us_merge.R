@@ -1,8 +1,8 @@
 #***********************************************************************************************************
 #  
-# Project: Wetlands Layers
-# Description: Merge US NWI
-# Date: 29 May 2025
+# Project: Land cover + Wetlands
+# Description: Merge and summarize US NWI
+# Date: 3 July 2025
 # Author: Érika Garcez da Rocha
 #
 #**********************************************************************************************************************************
